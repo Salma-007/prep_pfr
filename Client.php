@@ -6,8 +6,10 @@ class Client extends Personne{
     protected $numeroClient;
     protected $reservations;
 
-    public function __construct(){
-        parent::__construct();
+    public function __construct($nom, $prenom, $email,$numeroClient, $reservations){
+        parent::__construct($nom, $prenom, $email);
+        $this->numeroClient = $numeroClient;
+        $this->reservations = $reservations;
     }
 
     public function ajouterReservation(Reservation $r){

@@ -1,9 +1,15 @@
 <?php
 include './ReservableInterface.php';
+include './Vehicule.php';
 
-class Camion implements ReservableInterface{
+class Camion extends Vahicule implements ReservableInterface{
 
     protected $capaciteTonnage;
+
+    public function __construct($id, $immatriculation, $marque, $modele, $prixJours, $disponible, $capaciteTonnage){
+        parent::__construct($id, $immatriculation, $marque, $modele, $prixJours, $disponible);
+        $this->capaciteTonnage = $capaciteTonnage;
+    }
 
     public function getType(){
         return "Camion";
